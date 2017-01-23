@@ -1,6 +1,8 @@
 opam-version: "1.2"
 version: "0.1"
 maintainer: "alix.trieu@ens-rennes.fr"
+authors: "FUCKYOUOPAM"
+homepage: "FUCKFUCKFUCK"
 
 build: [make]
 
