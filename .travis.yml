@@ -5,7 +5,6 @@ script: bash -ex .travis-opam.sh
 notifications:
   email: false
 env:
-  - OCAML_VERSION=4.02
-  - PINS="ocf:https://github.com/zoggy/ocf.git#0.4.1"
+  - OCAML_VERSION=4.02 PINS="ocf:https://github.com/zoggy/ocf.git#0.4.1"
 os:
   - linux
