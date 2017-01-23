@@ -1,0 +1,15 @@
+opam-version: "1.2"
+name: "PKG"
+version: "bar"
+maintainer: "Alix <alix.trieu@ens-rennes.fr>"
+authors: "Alix <alix.trieu@ens-rennes.fr>"
+homepage: ""
+bug-reports: ""
+license: ""
+build: [
+  [make]
+]
+depends: [
+  "ocamlfind" {build}
+  "stog"
+]
