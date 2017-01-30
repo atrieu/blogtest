@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><if site-title=""><dummy_/><dummy_><site-title/> : </dummy_></if><doc-title/></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <default-style/>
+    <!-- matjax -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- /mathjax -->
+
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <div class="page-title"><doc-title/></div>
+        <if subtitle=""><dummy_/><div class="page-subtitle"><subtitle/></div></if>
+      </div>
+      <if authors=""><dummy_/><div class="authors"><authors/></div></if>
+      <if doc-date=""><dummy_/><div class="date"><doc-date/></div></if>
+      <div class="latex-defs">\(<latex-defs/>\)</div>
+      <doc-body/>
+    </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js">_</script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">_</script>
+  </body>
+</html>
