@@ -6,14 +6,14 @@ after_success:
   - eval $(opam config env)
   - opam install stog
   - stog --package stog.markdown index.html
-  - git clone -b gh-pages "https://$GH_TOKEN@github.com/$USERNAME/$REPO" gh-pages
-  - cd gh-pages
+  - cd stog-output
+  - git init
   - git config user.name "Travis Worker"
   - git config user.email "travis@travis-ci.org"
-  - cp ../stog-output/*.{html,css} ./
+  - git remote add upstream https://$GH_TOKEN@github.com/$USERNAME/$REPO.git > /dev/null 2>&1
   - git add -A .
   - git commit -m "Update $(date '+%m/%d/%y %H:%M')."
-  - git push -q origin gh-pages
+  - git push -q upstream HEAD:gh-pages > /dev/null 2>&1
 notifications:
   email: false
 env:
