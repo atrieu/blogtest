@@ -6,7 +6,7 @@ after_success:
   - eval $(opam config env)
   - opam install stog
   - stog --package stog.markdown index.html
-  - git clone -b gh-pages "https://$GH_TOKEN@github.com/$USERNAME/$REPO.git" gh-pages
+  - git clone -b gh-pages "https://$GH_TOKEN@github.com/$USERNAME/$REPO" gh-pages
   - cd gh-pages
   - git config user.name "Travis Worker"
   - git config user.email "travis@travis-ci.org"
