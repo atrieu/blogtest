@@ -3,6 +3,7 @@ sudo: required
 install: wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-ocaml.sh
 script: bash -ex .travis-ocaml.sh
 after_success:
+  - eval $(opam config env)
   - opam install stog
   - stog --package stog.markdown index.html
   - git clone -b gh-pages "https://$GH_TOKEN@github.com/$USERNAME/$REPO.git" gh-pages
