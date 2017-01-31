@@ -11,26 +11,27 @@ addons:
     - camlp4-extra
     - opam
 script:
-  - opam init -a "git://github.com/ocaml/opam-repository" --comp="$OCAML_VERSION"
-  - eval `opam config env`
-  - opam install stog
-  - stog --package stog.markdown index.html
-  - cd stog-output
-  - git init
-  - git config user.name "Travis Worker"
-  - git config user.email "travis@travis-ci.org"
-  - git remote add upstream https://$GH_TOKEN@github.com/$USERNAME/$REPO.git > /dev/null 2>&1
-  - git fetch upstream
-  - git reset upstream/gh-pages
-  - git add -A .
-  - git commit -m "Update $(date '+%m/%d/%y %H:%M')."
-  - git push -q upstream HEAD:gh-pages
+- opam init -a "git://github.com/ocaml/opam-repository" --comp="$OCAML_VERSION"
+- eval `opam config env`
+- opam install stog
+- stog --package stog.markdown index.html
+- cd stog-output
+- git init
+- git config user.name "Travis Worker"
+- git config user.email "travis@travis-ci.org"
+- git remote add upstream https://$GH_TOKEN@github.com/$USERNAME/$REPO.git > /dev/null
+  2>&1
+- git fetch upstream
+- git reset upstream/gh-pages
+- git add -A .
+- git commit -m "Update $(date '+%m/%d/%y %H:%M')."
+- git push -q upstream HEAD:gh-pages
 notifications:
   email: false
 env:
   global:
-    - secure: HAEvx3nOMmdILc2l1le6hCKqadOR9BcILlrH+Rnv2c98F7xBIBYEo8jcTFKhVM7LX0bGK8WX+oyH9aeL3LR1SZgNfHrF0qPPZGStVETgcrubGRXqr5fDFjkE49J90s6USr0QG5IctVCJYmOot4Llk95t7p9q1WOfnbnSjTJPsKlrPvho1XRQwTVI/Rw7iA4B8LuwljhqoSfPzXgxuARG+KQVB6zIxUdOlOEm4MvXZ9MCne0jCxcBvMvhfyafaMK7RwrQpV9Jga/9WbOSrqMfIaCqFwFqaag2rtSWZljS47RrHjl5WZRwQDsGiWFi7p3njr2XlVqjw2ha/398CHrjvi3OUG2BjDYV7FoXtOXkIxfYTWp2VPnN+gKjAPSw611NobNmdhRAx0k40lH8KIyEjxMqS2S1mb0bFQWc8iP+wDQKtO/G0WvknIYtuQT7rF4X5sBFXJVzOWOG55u92oQlOMKvCwk3S+yeGTjb9B0QL9EsBgsX/XJEifQQBX1mIpK1k45oXSJVUkgxhfYVqXqVW9QKjBWcC+nfcK1z4hzEoTdzslFzlCyo4ZaQqUQ/attLQlH5mRL9Br2l3ttJpRg8PnE/pOI/A2J8LIlmXwfa9sNOZa5uQrOddIjUyTNi6jI6I/06JUcuN1zTZ7JP5jBPYCUKXODNz/be0br0pVflxzE=
-    - OCAML_VERSION=4.03.0
-    - OPAMYES=1
-    - USERNAME=atrieu
-    - REPO=blogtest
+  - OCAML_VERSION=4.03.0
+  - OPAMYES=1
+  - USERNAME=atrieu
+  - REPO=blogtest
+  - secure: L36CudyUUH+OaToi7DbloDWSby8sZ7QWXdFIxJVnlCzrBAn+AaLqb36EOxMRA5LbiocKuNzbNBa+yOM4dQ8KCQtQBSoKDUgBZg8eHDoWCvU+fPJcCBjraQEnpQ9L612MgTk6UsW/T3U8tt3cWnz0jGeTkE5LWeHMKeZE1rx2vaEu0p0ohmpt/PzoK+FvhmejoUo4qLNbHn8j73NZbHvsQmgOQEdGwkDN+bgR1Y8pm23VEpp1Ex4AicDEMYjW/hKaVpG0dZBjvVyk2Uz2AM0u7abx42awu0APDg6Yth97zNNM6JFqj86xi5UDxeA7iylvweG0LQ2Fv9rkozpeMkqwa8N7XOx7U65T1/NA6UyiZtGZMsxsm7Yqnil2xTsVIQnmyq0PrQjuWlx21Pl8dYYzQFUQsJybc8un8EknxXvO1sWCRXpl4bP4kvw61IBeUONCw5ZbYWm9nXxca24kaVQw3GJDX2g8d1PkVECm0wO0mtgguyCkDnHEVYyN/3IwIE106+UuVRu8wbaQT608V0hME8yhaEvX00PonRGHiOsOsQ8KiGyD+Q/V95JWxRbGaCPGcO8AR9BSn7I+FarO6qnqpz1WRXW6JwHj9ffKUhHpnNW5N4CvLttsgETtQM1IInZh9boQkagSAe7QrXgl9BuqZxU4cwZWn9DBOKjSd1pmpHM=
